@@ -20,7 +20,7 @@ const rulesURL = 'https://api.twitter.com/2/tweets/search/stream/rules'
 const streamURL =
   'https://api.twitter.com/2/tweets/search/stream?tweet.fields=public_metrics&expansions=author_id'
 
-const rules = [{ value: 'giveaway' }]
+const rules = [{ value: 'Felix Tshisekedi' }, { value: 'Martin Fayulu' }, { value: 'Joseph Kabila' }, { value: 'Moise Katumbi' }]
 
 // Get stream rules
 async function getRules() {
