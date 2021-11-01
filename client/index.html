@@ -15,17 +15,17 @@
       integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
       crossorigin="anonymous"
     />
-    <title>Real-Time Tweet Stream</title>
+    <title>Mwebuntu Tweet Stream</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-dark">
       <div class="container">
-        <a href="#" class="navbar-brand">Real-Time Tweet Stream</a>
+        <a href="#" class="navbar-brand">Mwebuntu Tweet Stream</a>
       </div>
     </nav>
 
     <div class="container">
-      <div id="tweetStream"></div>
+      <div id="tweetStream" class="row"></div>
     </div>
 
     <script
@@ -53,19 +53,21 @@
         }
 
         const tweetEl = document.createElement('div')
-        tweetEl.className = 'card my-4'
+        tweetEl.className = 'col-4'
         tweetEl.innerHTML = `
+            <div class="card my-4">
             <div class="card-body">
                 <h5 class="card-title">${tweetData.text}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">${tweetData.username}</h6>
                 
                 <a class="btn btn-primary mt-3" href="https://twitter.com/${tweetData.username}/status/${tweetData.id}">
-                    <i class="fab fa-twitter"></i> Go To Tweet    
+                    <i class="fab fa-twitter"></i> Voir le Tweet    
                 </a>
+            </div>
             </div>
         `
 
-        tweetStream.appendChild(tweetEl)
+        tweetStream.insertBefore(tweetEl, tweetStream.childNodes[0])
 
         // setTimeout(() => tweetEl.remove(), 5000)
       })
